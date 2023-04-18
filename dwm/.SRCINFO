@@ -1,0 +1,17 @@
+pkgbase = metis-dwm
+	pkgdesc = DWM for metis-os
+	pkgver = 1.3
+	pkgrel = 5
+	url = https://github.com/metis-os/metis-dwm
+	arch = any
+	license = GPL3
+	depends = libx11
+	depends = libxinerama
+	depends = libxft
+	depends = freetype2
+	provides = metis-dwm
+	conflicts = dwm
+	options = !strip
+	options = !emptydirs
+
+pkgname = metis-dwm

@@ -13,7 +13,6 @@ depends=('libx11' 'libxinerama' 'libxft' 'freetype2'
 conflicts=('dwm')
 provides=("${pkgname}")
 options=(!strip !emptydirs)
-install="${pkgname}.install"
 
 prepare() {
 	cp -af ../source/. ${srcdir}
