@@ -19,9 +19,10 @@ jobs:
     steps:
       # - name: Cloning the repository! please wait...
       - uses: actions/checkout@v3
-      - name: Installing artools in the system
+      - name: Building packages
         run: |
           cp .makepkg_config/makepkg.conf /etc/makepkg.conf -r
+          cat /etc/makepkg.conf
           bash build_pkgs.sh andromeda
           echo "NOW=$(date +'%Y%m%d')" >> $GITHUB_ENV
 
