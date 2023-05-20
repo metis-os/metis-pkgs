@@ -28,7 +28,6 @@ jobs:
       - name: Building packages
         run: |
           cp .makepkg_config/makepkg.conf /etc/makepkg.conf -r
-          sudo -u nobody
           bash build_pkgs.sh andromeda 
           zip -r andromeda.zip andromeda/pkgs-andromeda/*' 
 
