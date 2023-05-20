@@ -18,16 +18,12 @@ jobs:
       - uses: actions/checkout@v3
       - name: setup env
         run: |
-          pacman -Syu binutils fakeroot sudo zip --noconfirm --needed 
-          mkdir /home/build
-          chgrp nobody /home/build
-          chmod g+ws /home/build
-          setfacl -m u::rwx,g::rwx /home/build
-          setfacl -d --set u::rwx,g::rwx,o::- /home/build
+          pacman -Sy  zip --noconfirm --needed 
 
       - name: Building packages
         run: |
           cp .makepkg_config/makepkg.conf /etc/makepkg.conf -r
+          cp .makepkg_config/makepkg /usr/bin/makepkg -r
           bash build_pkgs.sh andromeda 
           zip -r andromeda.zip andromeda/pkgs-andromeda/*' 
 
