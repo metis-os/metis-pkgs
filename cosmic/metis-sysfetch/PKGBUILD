@@ -1,0 +1,24 @@
+# Maintainer: Metis Linux <info@metislinux.org> 
+
+pkgname=metis-sysfetch
+pkgver=1.0
+pkgrel=0
+pkgdesc="System info fetch scripts for metis-os"
+url="https://github.com/metis-os/metis-extra"
+arch=('any')
+license=('MIT')
+depends=('bash' 
+)
+conflicts=('zfetch' 'nafetch')
+provides=("${pkgname}")
+options=(!strip !emptydirs)
+
+prepare() {
+	cp -af ../files/. ${srcdir}
+}
+
+package() {
+  cd "$srcdir"
+  install -m755 -D "$srcdir/nafetch" "$pkgdir/usr/local/bin/nafetch"
+  install -m755 -D "$srcdir/zfetch" "$pkgdir/usr/local/bin/zfetch"
+}

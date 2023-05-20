@@ -1,0 +1,26 @@
+# Maintainer: pwnwriter < hey@pwnwriter.xyz>
+#
+pkgname=metis-neofetch
+pkgver=1.0
+pkgrel=2
+pkgdesc="Neofetch for metislinux"
+url="https://github.com/metis-os/metis-extra"
+arch=('any')
+license=('GPL3')
+makedepends=()
+depends=()
+conflicts=()
+provides=("${pkgname}")
+options=(!strip !emptydirs)
+
+source=('neofetch'
+		'config.conf')
+
+sha256sums=('6d41dcdfb4d73bfc7ab270cff109cc1d88a3fb6b8c94dec66239223c8746bcce'
+
+        '55b75be8a938390481b17bd0a3e9abe7245125a197a63b30e68f7122e47f98b7')
+
+package() {
+	install -Dm 755 neofetch   		${pkgdir}/usr/local/bin/neofetch
+	install -Dm 644 config.conf	    ${pkgdir}/etc/skel/.config/neofetch/config.conf
+}

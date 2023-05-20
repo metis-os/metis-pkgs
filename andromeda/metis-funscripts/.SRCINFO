@@ -1,0 +1,12 @@
+pkgbase = metis-funscripts
+	pkgdesc = Fun Scripts for metis
+	pkgver = 1.0
+	pkgrel = 0
+	url = https://github.com/metis-os/metis-extra
+	arch = any
+	license = MIT
+	provides = metis-funscripts
+	options = !strip
+	options = !emptydirs
+
+pkgname = metis-funscripts

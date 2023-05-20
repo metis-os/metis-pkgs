@@ -1,0 +1,15 @@
+pkgbase = sysfetch
+	pkgdesc = System info fetch scripts for metis-os
+	pkgver = 0.0
+	pkgrel = 1
+	url = https://github.com/metis-os/metis-extra
+	arch = any
+	license = MIT
+	depends = bash
+	provides = sysfetch
+	conflicts = zfetch
+	conflicts = nafetch
+	options = !strip
+	options = !emptydirs
+
+pkgname = sysfetch

@@ -1,0 +1,31 @@
+# Maintainer: pwnwriter <hey@pwnwriter.xyz>
+
+pkgname=metis-funscripts
+pkgver=1.0
+pkgrel=0
+pkgdesc="Fun Scripts for metis"
+url="https://github.com/metis-os/metis-extra"
+arch=('any')
+license=('MIT')
+makedepends=()
+depends=()
+conflicts=()
+provides=("${pkgname}")
+options=(!strip !emptydirs)
+
+prepare() {
+    cp -af ../files/. "$srcdir"
+}
+
+package() {
+    cd "$srcdir"
+
+    # Array of script names
+    scripts=("animals" "bonsai" "colorbar" "colorblocks" "colortest" "colorwheel" "crunch" "crunchbang" "dna" "emwave" "faces" "fade" "ghosts" "hedgehogs" "illumina" "invaders" "mouseface" "panes" "pipes" "pipes3d" "railcars" "rally-x" "square" "tanks" "testfonts" "tiefighter" "unix" "zwaves")
+
+    # Install scripts using loop
+    for script in "${scripts[@]}"; do
+        install -Dm755 "$script" "$pkgdir/usr/local/bin/$script"
+    done
+}
+

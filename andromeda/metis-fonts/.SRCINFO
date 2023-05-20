@@ -1,0 +1,12 @@
+pkgbase = metis-fonts
+	pkgdesc = Fonts for METIS Linux
+	pkgver = 1.0
+	pkgrel = 0
+	url = https://github.com/metis-os/metis-packages
+	arch = any
+	license = GPL3
+	provides = metis-fonts
+	options = !strip
+	options = !emptydirs
+
+pkgname = metis-fonts

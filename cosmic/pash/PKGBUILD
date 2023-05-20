@@ -1,0 +1,22 @@
+# Maintainer: pwnwriter <hey@pwnwriter.xyz>
+
+pkgname='pash'
+_pkgname='pash'
+pkgver=2.3
+pkgrel=0
+pkgdesc="A simple password manager using GPG written in POSIX sh"
+arch=('any')
+url="https://github.com/dylanaraps/pash"
+license=('MIT')
+depends=('xclip')
+provides=('pash')
+conflicts=('pash')
+
+prepare() {
+	cp -af ../files/. ${srcdir}
+}
+
+package() {
+        cd "$srcdir"
+	install -Dm755 "pash" "$pkgdir/usr/bin/pash"
+}
