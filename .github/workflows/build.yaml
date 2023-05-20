@@ -17,9 +17,17 @@ jobs:
 
     steps:
       - uses: actions/checkout@v3
+      - name: setup env
+        run: |
+         pacman -Sy binutils fakeroot sudo zip --noconfirm --needed 
+         echo 'non_root ALL=NOPASSWD: ALL' >> /etc/sudoers
+         mkdir /home/non_root
+         chown -R non_root:non_root /home/non_root
+
+
       - name: Building packages
         run: |
-          pacman -Syy --noconfirm zip 
+          sudo -u pwnwriter bash -c '
           cp .makepkg_config/makepkg.conf /etc/makepkg.conf -r
           cat /etc/makepkg.conf
           bash build_pkgs.sh andromeda 
