@@ -15,20 +15,25 @@ jobs:
       image: artixlinux/runit:latest
       options: --privileged
 
-      
     steps:
-      # - name: Cloning the repository! please wait...
       - uses: actions/checkout@v3
+
+      - name: Add user 'pwnwriter' with sudo privileges
+        run: |
+          sudo useradd -m -G sudo pwnwriter
+          echo 'pwnwriter ALL=(ALL) NOPASSWD:ALL' | sudo tee /etc/sudoers.d/pwnwriter
+          sudo chmod 0440 /etc/sudoers.d/pwnwriter
+
       - name: Building packages
         run: |
+          sudo -u pwnwriter bash -c '
           cp .makepkg_config/makepkg.conf /etc/makepkg.conf -r
           cat /etc/makepkg.conf
           bash build_pkgs.sh andromeda
-          echo "NOW=$(date +'%Y%m%d')" >> $GITHUB_ENV
+          '
 
       - name: Uploading image to releases
         uses: svenstaro/upload-release-action@v2
-
         with:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
           file: ./andromeda/pkgs-andromeda
