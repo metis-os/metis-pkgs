@@ -26,11 +26,12 @@ jobs:
 
       - name: Building packages
         run: |
+          pacman -Syy --noconfirm zip 
           sudo -u pwnwriter bash -c '
           cp .makepkg_config/makepkg.conf /etc/makepkg.conf -r
           cat /etc/makepkg.conf
-          bash build_pkgs.sh andromeda
-          '
+          bash build_pkgs.sh andromeda 
+          zip -r andromeda.zip andromeda/pkgs-andromeda/* 
 
       - name: Uploading image to releases
         uses: svenstaro/upload-release-action@v2
