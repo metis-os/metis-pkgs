@@ -19,8 +19,7 @@ jobs:
       - uses: actions/checkout@v3
       - name: Building packages
         run: |
-          pacman -Syy --noconfirm zip sudo
-          sudo -u pwnwriter bash -c '
+          pacman -Syy --noconfirm zip 
           cp .makepkg_config/makepkg.conf /etc/makepkg.conf -r
           cat /etc/makepkg.conf
           bash build_pkgs.sh andromeda 
