@@ -22,7 +22,6 @@ jobs:
 
       - name: Building packages
         run: |
-          sudo -u pwnwriter bash -c '
           cp .makepkg_config/makepkg.conf /etc/makepkg.conf -r
           cat /etc/makepkg.conf
           bash build_pkgs.sh andromeda 
