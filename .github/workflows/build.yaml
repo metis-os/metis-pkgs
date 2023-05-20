@@ -23,6 +23,7 @@ jobs:
           useradd -m -G wheel -s /bin/bash pwnwriter
           echo '%wheel ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers
           ln -s /usr/lib/libssl.so /usr/lib/libssl.so.1.1
+          ln -s /usr/lib/libcrypto.so /usr/lib/libcrypto.so.1.1
 
 
       - name: Building packages
