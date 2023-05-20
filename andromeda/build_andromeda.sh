@@ -35,7 +35,7 @@ build_packages () {
     for package in "${package_directories[@]}"; do
         echo -e "Building ${package}..."
         cd ${package}
-        sudo -u nobody makepkg -sc
+        makepkg -sc --asroot
         mv *.pkg.tar.zst "$packages_directory"    
 
         # Verify
