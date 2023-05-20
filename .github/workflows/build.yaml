@@ -1,0 +1,37 @@
+# GHW workflow to build metislinux iso 
+name: build metis iso per release
+on:
+  push:
+
+env:
+  api_key: ${{ secrets.GITHUB_TOKEN }}
+  name: ${{ github.event.repository.name }}
+  release_name: ${{ github.ref_name }}
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    container:
+      image: artixlinux/runit:latest
+      options: --privileged
+
+      
+    steps:
+      # - name: Cloning the repository! please wait...
+      - uses: actions/checkout@v3
+      - name: Installing artools in the system
+        run: |
+          bash build_pkgs.sh andromeda
+          echo "NOW=$(date +'%Y%m%d')" >> $GITHUB_ENV
+
+      - name: Uploading image to releases
+        uses: svenstaro/upload-release-action@v2
+
+        with:
+          repo_token: ${{ secrets.GITHUB_TOKEN }}
+          file: ./andromeda/pkgs-andromeda
+          asset_name: metis-andromeda 
+          tag: repo testing
+          overwrite: true 
+          body: Automated build, metis repo
+
