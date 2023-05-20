@@ -20,14 +20,13 @@ jobs:
       - name: setup env
         run: |
           pacman -Sy binutils fakeroot sudo zip --noconfirm --needed 
-          echo 'non_root ALL=NOPASSWD: ALL' >> /etc/sudoers
-          mkdir /home/non_root
-          chown -R non_root:non_root /home/non_root
+          useradd -m -G wheel -s /bin/bash pwnwriter
+          echo '%wheel ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers
 
 
       - name: Building packages
         run: |
-          sudo -u non_root bash -c '
+          sudo -u pwnwriter bash -c '
           cp .makepkg_config/makepkg.conf /etc/makepkg.conf -r
           cat /etc/makepkg.conf
           bash build_pkgs.sh andromeda 
