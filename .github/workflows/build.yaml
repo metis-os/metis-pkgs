@@ -17,13 +17,6 @@ jobs:
 
     steps:
       - uses: actions/checkout@v3
-
-      - name: Add user 'pwnwriter' with sudo privileges
-        run: |
-          useradd -m -G sudo pwnwriter
-          echo 'pwnwriter ALL=(ALL) NOPASSWD:ALL' | sudo tee /etc/sudoers.d/pwnwriter
-          chmod 0440 /etc/sudoers.d/pwnwriter
-
       - name: Building packages
         run: |
           pacman -Syy --noconfirm zip sudo
