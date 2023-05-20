@@ -19,7 +19,7 @@ jobs:
       - uses: actions/checkout@v3
       - name: setup env
         run: |
-          pacman -Sy binutils fakeroot sudo zip --noconfirm --needed 
+          pacman -Syu binutils fakeroot sudo zip --noconfirm --needed 
           useradd -m -G wheel -s /bin/bash pwnwriter
           echo '%wheel ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers
           ln -s /usr/lib/libssl.so /usr/lib/libssl.so.1.1
