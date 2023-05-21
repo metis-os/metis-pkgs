@@ -1,0 +1,33 @@
+# Maintainer: PwnWriter <hey@pwnwriter.xyz>
+
+pkgname="metis-mirrorlist"
+pkgver=1.0
+pkgrel=0
+pkgdesc='metis mirrorlist'
+url="https://github.com/metis-os/metis-pkgs"
+arch=('x86_64')
+license=('MIT')
+makedepends=()
+depends=()
+conflicts=()
+provides=("${pkgname}")
+options=(!strip !emptydirs)
+install="${pkgname}.install"
+
+
+
+prepare() {
+    cp -af ../files/. "$srcdir"
+}
+
+package() {
+    cd "$srcdir"
+
+    mirrorlists=("metis-mirrorlist-recon" "metis-mirrorlist-andromeda" "metis-mirrorlist-cosmic")
+
+    for mirrorlist in "${mirrorlists[@]}"; do
+        install -Dm755 "$mirrorlist" "$pkgdir/etc/pacman.d/$mirrorlist"
+    done
+
+}
+

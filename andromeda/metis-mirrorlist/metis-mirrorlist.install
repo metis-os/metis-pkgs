@@ -1,0 +1,19 @@
+post_install(){
+        echo -e "
+        PLease add the following configuration to your /etc/pacman.conf
+
+        [andromeda]
+        SigLevel = Optional TrustAll
+        Include = /etc/pacman.d/metis-mirrorlist-andromeda
+        
+        [cosmic]
+        SigLevel = Optional TrustAll
+        Include = /etc/pacman.d/metis-mirrorlist-cosmic
+        
+        [recon]
+        SigLevel = Optional TrustAll
+        Include = /etc/pacman.d/metis-mirrorlist-recon
+        
+        "
+}
+
