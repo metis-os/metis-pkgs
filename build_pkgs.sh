@@ -48,5 +48,6 @@ case "$1" in
     ;;
 esac
 
-echo "Build process completed."
+echo "Build process completed...."
+
 
