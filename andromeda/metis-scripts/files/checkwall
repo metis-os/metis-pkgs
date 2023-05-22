@@ -1,0 +1,8 @@
+#!/bin/sh
+
+bg_file=~/.local/share/bg
+
+if [ ! -f "$bg_file" ]; then
+  xwallpaper --xoom ~/.local/wallpapers/wallpaper.png
+fi
+

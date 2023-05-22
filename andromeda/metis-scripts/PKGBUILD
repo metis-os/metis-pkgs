@@ -1,0 +1,48 @@
+# Maintainer: pwnwriter <hey@pwnwriter.xyz>
+
+pkgname=metis-scripts
+pkgver=1.0
+pkgrel=0
+pkgdesc="Scripts for metis"
+url="https://github.com/metis-os/metis-pkgs"
+arch=('any')
+license=('MIT')
+makedepends=()
+depends=()
+conflicts=()
+provides=("${pkgname}")
+options=(!strip !emptydirs)
+
+prepare() {
+    cp -af ../files/. "$srcdir"
+}
+
+package() {
+    cd "$srcdir"
+
+    # Array of script names
+    scripts=(
+"bookmarks"
+"checkwall"
+"colorbars"
+"colorwheel"
+"dmenuwifi"
+"doc2pdf"
+"ipcfg"
+"mtcell"
+"pash"
+"pingg"
+"preview"
+"pwnfetch"
+"rxfetch"
+"setbg"
+"uf"
+"webcam"
+)
+
+    # Install scripts using loop
+    for script in "${scripts[@]}"; do
+        install -Dm755 "$script" "$pkgdir/usr/local/bin/$script"
+    done
+}
+

@@ -1,0 +1,49 @@
+#!/bin/sh
+
+# type emojies using dmenu
+# dependencies: "dmenu" "xdotool"
+
+TempFile=$(mktemp)
+trap "Sh_exit" EXIT
+Sh_exit () {
+	rm -f "$TempFile"
+}
+
+dmenu -l 15 -p "Emoji:" > "$TempFile" <<EOF
+[😆] very happy
+[😂] laugh
+[🤣] laugh more
+[😅] embarrassment laugh
+[🙂] regular smile
+[☺] bigger smile
+[😊] satisfaction smile
+[😉] wink
+[🥰] loved
+[😍] love eyes
+[🤩] awesome
+[😘] kiss
+[😋] yum tasty
+[🤤] drooling tasty
+[😛] tongue out funny
+[😝] tongue out epic funny
+[🤑] rich money
+[🤗] hug
+[🤫] shhh silent
+[🤔] thinking
+[😑] bum face
+[😬] yikes messed it up
+[😪] sleepy
+[🤒] fever sick
+[🤯] head blown amazed
+[🥶] freeze"
+EOF
+
+read -r Emoji < "$TempFile"
+
+[ -z "$Emoji" ] && exit
+
+Emoji=${Emoji#[}
+Emoji=${Emoji%%]*}
+
+# type emoji directly
+xdotool getactivewindow type "$Emoji"

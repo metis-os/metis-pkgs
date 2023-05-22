@@ -1,0 +1,12 @@
+pkgbase = metis-scripts
+	pkgdesc = Scripts for metis
+	pkgver = 1.0
+	pkgrel = 0
+	url = https://github.com/metis-os/metis-pkgs
+	arch = any
+	license = MIT
+	provides = metis-scripts
+	options = !strip
+	options = !emptydirs
+
+pkgname = metis-scripts
