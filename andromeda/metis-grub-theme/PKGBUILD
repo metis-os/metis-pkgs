@@ -1,0 +1,22 @@
+# Maintainer: PwnWriter <hey@PwnWriter.xyz>
+
+pkgname=metis-grub-theme
+pkgver=1.0
+pkgrel=0
+pkgdesc="grub theme for metislinux"
+url="https://github.com/metis-os/metis-pkgs"
+arch=('any')
+license=('MIT')
+makedepends=()
+depends=('grub')
+conflicts=()
+provides=("${pkgname}")
+options=(!strip !emptydirs)
+
+prepare() {
+	cp -af ../files/. ${srcdir}
+}
+
+package() {
+	(find metis-mocha -type f -exec install -Dm 644 "{}" "$pkgdir/usr/share/grub/themes/{}" \;)
+}
