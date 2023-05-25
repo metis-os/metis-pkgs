@@ -1,0 +1,11 @@
+#!/bin/bash
+
+# Copyright PwnWriter || METIS Linux ( metislinux.org )
+
+remove_calamares(){
+        sudo pacman -Rcns calamares || exit 0
+        sudo rm -rf /etc/calamares
+
+}
+
+remove_calamares
