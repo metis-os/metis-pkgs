@@ -1,0 +1,25 @@
+#!/usr/bin/env bash
+
+## Welcome / Autostart app for METIS  
+
+DIR='/usr/share/metis/src'
+stdbuf -oL -eL yad  --width='900' --height='570' --borders=0 --center \
+					--title='Welcome' \
+					--window-icon=metis-logo \
+					--no-buttons --no-escape \
+                                        --html --uri="$DIR/index.html" \
+                                        --print-uri 2>&1 \
+| while read -r line; do
+	case ${line##*/} in
+		run1)
+            dunstify -u low "Launching Calamares..." && calamares &
+            sleep 1
+            pkill -9 yad
+            ;;
+        run2)
+            dunstify -u low "Enjoy metis live mode ..." && pkill -9 yad
+            ;;
+		*)		   echo "No URI" ;;
+	esac
+done
+

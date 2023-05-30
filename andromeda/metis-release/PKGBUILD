@@ -1,0 +1,24 @@
+# Maintainer: PwnWriter <hey@PwnWriter.xyz> 
+
+pkgname=metis-release
+pkgver=1.0
+pkgrel=1
+pkgdesc="Pacman hooks for METIS to fix various system files."
+arch=('any')
+url="https://github.com/metis-os/metis-pkgs"
+license=('MIT')
+
+prepare() {
+    cp -af ../files/* ${srcdir}
+}
+
+package() {
+    local hooks=${pkgdir}/usr/share/libalpm/hooks
+    local bin=${pkgdir}/usr/bin
+
+    install -Dm644 ${srcdir}/metis-hooks.hook              ${hooks}/metis-hooks.hook
+    install -Dm644 ${srcdir}/metis-lsb-release.hook        ${hooks}/metis-lsb-release.hook
+    install -Dm644 ${srcdir}/metis-os-release.hook         ${hooks}/metis-os-release.hook
+
+    install -Dm755 ${srcdir}/metis-hooks-runner            ${bin}/metis-hooks-runner
+}

@@ -1,0 +1,19 @@
+# Maintainer: PwnWriter <hey@pwnwriter.xyz>
+
+pkgname=metis-welcome
+_destname1="usr/"
+pkgver=1.0
+pkgrel=1
+pkgdesc="Welcome app for metislinux"
+url="https://github.com/metis-os/metis-pkgs"
+arch=('any')
+license=('MIT')
+depends=('yad')
+provides=("${pkgname}")
+options=(!strip !emptydirs)
+
+package() {
+        cd ../${_destname1}
+        cp -rf "local/" ${pkgdir}/${_destname1}
+        cp -rf "share/" ${pkgdir}/${_destname1}
+}

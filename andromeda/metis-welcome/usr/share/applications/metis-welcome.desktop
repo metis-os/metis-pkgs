@@ -1,0 +1,7 @@
+[Desktop Entry]
+Name=METIS Welcome
+Comment=METIS Welcome Application
+Exec=metis-welcome
+Icon=metis-logo
+Type=Application
+Categories=System;

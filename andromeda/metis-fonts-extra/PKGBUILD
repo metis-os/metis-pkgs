@@ -1,0 +1,24 @@
+# Maintainer: pwnwriter <hey@pwnwriter.xyz>
+
+pkgname=metis-fonts-extra
+pkgver=1.0
+pkgrel=0
+pkgdesc="Fonts for METIS Linux"
+url="https://github.com/metis-os/metis-pkgs"
+arch=('any')
+license=('MIT')
+makedepends=()
+depends=()
+conflicts=()
+provides=("${pkgname}")
+options=(!strip !emptydirs)
+
+prepare() {
+	cp -af ../files/. ${srcdir}
+}
+
+package() {
+	(find * -type f -exec install -Dm 644 "{}" "$pkgdir/usr/share/fonts/{}" \;)
+}
+
+

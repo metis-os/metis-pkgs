@@ -35,7 +35,7 @@ build_packages () {
     for package in "${package_directories[@]}"; do
         echo -e "Building ${package}..."
         cd ${package}
-        makepkg -sc
+        makepkg -scf
         mv *.pkg.tar.zst "$packages_directory"    
 
         # Verify
@@ -52,11 +52,6 @@ build_packages () {
         cd "$current_directory"
     done
 
-    repository_directory='../pkgs/x86_64'
-    if [[ -d "$repository_directory" ]]; then
-        mv -f "$packages_directory"/*.pkg.tar.zst "$repository_directory" && rm -r "$packages_directory"
-        echo -e "Packages moved to Repository.\n[!] Don't forget to update the database.\n"
-    fi
 }
 
 build_packages

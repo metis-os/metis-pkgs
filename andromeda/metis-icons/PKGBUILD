@@ -1,0 +1,24 @@
+# Maintainer: PwnWriter < hey@PwnWriter.xyz >
+
+pkgname=metis-icon-pack
+pkgver=1.0
+pkgrel=0
+pkgdesc="Icon themes for metislinux"
+url="https://github.com/metis-os/metis-pkgs"
+arch=('any')
+license=('MIT')
+makedepends=()
+depends=()
+conflicts=()
+provides=("${pkgname}")
+options=(!strip !emptydirs)
+
+prepare() {
+	cp -af ../files/. ${srcdir}
+}
+
+package() {
+	local _iconsdir=${pkgdir}/usr/share/icons
+	mkdir -p "$_iconsdir"
+	cp -r ${srcdir}/* "$_iconsdir"
+}

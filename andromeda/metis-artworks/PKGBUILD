@@ -1,0 +1,25 @@
+# Maintainer: pwnwriter <hey@pwnwriter.xyz>
+
+pkgname=metis-artworks
+pkgver=1.0
+pkgrel=0
+pkgdesc="Artworks for metislinux"
+url="https://github.com/metisl-os/metis-pkgs"
+arch=('any')
+license=('MIT')
+makedepends=()
+depends=()
+conflicts=()
+provides=("${pkgname}")
+options=(!strip !emptydirs)
+
+prepare() {
+	cp -af ../files/. ${srcdir}
+}
+
+package() {
+	(find * -type f -exec install -Dm 644 "{}" "$pkgdir/usr/share/metis/artworks/{}" \;)
+}
+
+
+

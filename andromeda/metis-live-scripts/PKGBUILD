@@ -21,7 +21,7 @@ package() {
     cd "$srcdir"
 
     # Array of script names
-    scripts=("remove_pkgs")
+    scripts=("remove_pkgs" "metis-chroot")
 
     # Install scripts using loop
     for script in "${scripts[@]}"; do

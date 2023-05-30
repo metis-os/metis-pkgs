@@ -1,0 +1,10 @@
+[Trigger]
+Operation = Install
+Operation = Upgrade
+Type = Package
+Target = metis-hooks
+
+[Action]
+Description = Updating metis System Configurations...
+When = PostTransaction
+Exec = /usr/bin/metis-hooks-runner
