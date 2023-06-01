@@ -3,7 +3,7 @@
 # Copyright PwnWriter || METIS Linux ( metislinux.org )
 
 remove_calamares(){
-        pacman --noconfirm -Rcns calamares && rm -rf /etc/calamares 
+        pacman --noconfirm -Rcns calamares metis-welcome metis-live-scripts && rm -rf /etc/calamares 
         userdel  -r artix  || exit 0
 
 }

@@ -2,6 +2,6 @@
 Name=METIS Welcome
 Comment=METIS Welcome Application
 Exec=metis-welcome
-Icon=metis-logo
+Icon=metis-_logo-1024x1024-light.png
 Type=Application
 Categories=System;

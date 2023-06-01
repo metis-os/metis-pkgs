@@ -1,0 +1,90 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Tips</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+		<!-- Wrapper -->
+			<div id="wrapper" class="divided">
+				<!-- Tips -->
+					<section class="wrapper style1 align-center">
+						<div class="inner">
+							<h2>Tips and Tricks</h2>
+							<p>Few Tips and tricks, How to do this &amp; that, Questions that are asked millions of times.</p>
+                                                        
+
+							<h3 align="left">How to update my system?</h3>
+								<!-- Update System -->
+									<section class="wrapper style1 align-left">
+										<div class="content">
+											<div class="box">
+												<ul>
+													<li>Open a terminal and run: <code>sudo pacman -Syyu</code></li>
+												</ul>
+											</div>
+										</div>
+									</section>
+
+							<h3 align="left">How to fix <b><i>invalid or corrupted package (PGP signature)</i></b>issue?</h3>
+								<!-- Keyring Issue -->
+									<section class="wrapper style1 align-left">
+										<div class="content">
+											<div class="box">
+												<ul>
+													<li>Open a terminal</li>
+													<li>Run: <code>sudo pacman-key --init</code></li>
+													<li>Then Run: <code>sudo pacman-key --populate</code></li>
+													<li>Done! (Also delete the corrupted pkgs too.)</li>
+												</ul>
+											</div>
+										</div>
+									</section>
+
+
+                                                                        <section class="wrapper style1 align-center">
+                                                                                <div class="inner">
+                                                                                        <h2>The Init for metislinux </h2>
+                                                                                        <h3 align="left">What is Runit?</h3>
+                                                                                        <!-- Runit -->
+                                                                                        <section class="wrapper style1 align-left">
+                                                                                                <div class="content">
+                                                                                                        <div class="box">
+                                                                                                                <p>Runit is a simple and lightweight init system for Unix-like operating systems. It is designed to be easy to understand, reliable, and efficient. Runit follows the Unix philosophy of doing one thing well.</p>
+                                                                                                                <p>Runit manages system services, provides process supervision, and handles system startup and shutdown. It is known for its simplicity, stability, and fast boot times.</p>
+                                                                                                        </div>
+                                                                                                </div>
+                                                                                        </section>
+                                                                                        <h3 align="left">Enabling, Disabling, and Restarting Services</h3>
+                                                                                        <!-- Services -->
+                                                                                        <section class="wrapper style1 align-left">
+                                                                                                <div class="content">
+                                                                                                        <div class="box">
+                                                                                                                <p>To enable a service in Runit, create a symbolic link from its service directory to the <code>/etc/runit/sv/</code> directory. For example:</p>
+                                                                                                                <pre><code>ln -s /etc/runit/sv/service_name /run/runit/service/service_name</code></pre>
+                                                                                                                <p>To disable a service, remove the symbolic link from the <code>/etc/runit/sv/</code> directory:</p>
+                                                                                                                <pre><code>rm /run/runit/service/service_name</code></pre>
+                                                                                                                <p>To start/restart/stop a service, send the <code>SIGTERM</code> signal to its main process using the <code>sv</code> command:</p>
+                                                                                                                <pre><code>sv < start/stop/restart > service_name</code></pre>
+                                                                                                                <p>Replace <code>service_name</code> with the actual name of the service.</p>
+                                                                                                        </div>
+                                                                                                </div>
+                                                                                        </section>
+                                                                                </div>
+                                                                        </section>
+                                                </div>
+
+
+                                                <!-- Scripts -->
+                                                <script src="assets/js/jquery.min.js"></script>
+                                                <script src="assets/js/jquery.scrollex.min.js"></script>
+                                                <script src="assets/js/jquery.scrolly.min.js"></script>
+                                                <script src="assets/js/browser.min.js"></script>
+                                                <script src="assets/js/breakpoints.min.js"></script>
+                                                <script src="assets/js/util.js"></script>
+                                                <script src="assets/js/main.js"></script>
+        </body>
+</html>

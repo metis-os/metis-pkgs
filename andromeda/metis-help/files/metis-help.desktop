@@ -1,0 +1,7 @@
+[Desktop Entry]
+Name=Help and Tips
+Comment=Help and Tips for metislinux
+Exec=help-and-tips
+Icon=metislinux.png
+Type=Application
+Categories=System;

@@ -1,0 +1,356 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>DWM</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+		<!-- Wrapper -->
+			<div id="wrapper" class="divided">
+				<!-- DWM -->
+					<section class="wrapper style1 align-center">
+						<div class="inner">
+							<h2>DWM</h2>
+                                                        <p> 
+                                                        DWM (Dynamic window manager) is a widely-used tiling window manager that organizes windows in a full binary tree structure, treating them as leaves. It efficiently handles multiple monitors and is customizable through message-based configuration and control. DWM is a viable alternative window manager available in the METIS Linux distribution.
+                                                        </p>
+							<div class="index align-left">
+							<!-- Images -->
+								<section>
+									<div class="content">
+										<span class="image fit"><img src="images/dwm/dwm.png" alt="" /></span>
+									</div>
+								</section>
+					</section>
+				<!-- LAUNCHER-->
+					<section class="spotlight style1 orient-right content-align-left image-position-center onscroll-image-fade-in" id="first">
+						<div class="content">
+							<h2>APP LAUNCHER</h2>
+							<p>This is your dwm desktop. It's just a standalone dynamin window manager, So there are no desktop icons, no folders or directories just a clean wallpaper.
+							A statusbar (<b>DWMBAR</b>) on the top, shows your various system information, window modes in dwm and lets you switch between workspaces, control music, volume, brightness, connect to a network, etc.</p>
+							<ul class="actions stacked">
+								<li><a href="#apps-keys" class="button smooth-scroll-middle">View Keybindings</a></li>
+							</ul>
+						</div>
+						<div class="image">
+							<img src="images/dwm/launcher.png" alt="" />
+						</div>
+					</section>
+				<!-- Menu and Applets -->
+					<section class="spotlight style1 orient-left content-align-left image-position-center onscroll-image-fade-in">
+						<div class="content">
+							<h2>Menu and Applets</h2>
+							<p>A <code>quickmenu</code> powered by dmenu,lets you run important apps quickly.
+							Take screenshots using  <code>imagemagick</code> Change wallpaper along with colorscheme one the fly.
+                                                        <code>music</code> Let's you play music, stored in <code>~/music</code> 
+							<code>Run Eww</code> Run's the beautiful eww app.
+							<ul class="actions stacked">
+								<li><a href="#menu-keys" class="button smooth-scroll-middle">View Keybindings</a></li>
+							</ul>
+						</div>
+						<div class="image">
+							<img src="images/dwm/quickmenu.png" alt="" />
+						</div>
+					</section>
+				<!-- Applications -->
+					<section class="spotlight style1 orient-right content-align-left image-position-center onscroll-image-fade-in">
+						<div class="content">
+							<h2>Applications</h2>
+                                                        <p><code>ZSH</code> is the default shell which has vim bindings along with normal one's,
+							<code>Thunar</code> is the default file manager,
+							<code>Neovim (Neovide)</code> is the text editor,
+							<code>Firefox</code> is the web browser,
+							<code>Suckless's terminal (st)</code> is the terminal emulator and <code>Kitty</code> as alternate terminal in case st doesn't work for you.
+							There are pre-configured command line applications (<code>neovim</code>, <code>ranger</code>, <code>htop</code>, <code> and many more</code>) installed .</p>
+							<ul class="actions stacked">
+								<li><a href="#apps-keys" class="button smooth-scroll-middle">View Keybindings</a></li>
+							</ul>
+						</div>
+						<div class="image">
+							<img src="images/dwm/eww.png" alt="" />
+						</div>
+					</section>
+				<!-- Hardware Keys -->
+					<section class="spotlight style1 orient-left content-align-left image-position-center onscroll-image-fade-in">
+						<div class="content">
+							<h2>Hardware Keys</h2>
+							<p>Laptop's function keys are fully configured to use.
+							You can easily control the speaker/headphone <code>volume</code>, Screen <code>brightness</code>.
+							You can control music playback (default to mpd).
+							With <code>print</code> key, You can take <code>screenshots</code> of the desktop (with delays), focused window or selected area.</p>
+							<ul class="actions stacked">
+								<li><a href="#hw-keys" class="button smooth-scroll-middle">View Keybindings</a></li>
+							</ul>
+						</div>
+						<div class="image">
+							<img src="images/dwm/wall.png" alt="" />
+						</div>
+					</section>
+				<!-- Window Management -->
+					<section class="spotlight style1 orient-right content-align-left image-position-center onscroll-image-fade-in">
+						<div class="content">
+							<h2>Window Management</h2>
+							<ul class="actions stacked">
+                                                                <p>
+                                                                In dwm, windows can be tiled horizontally and vertically, and they can also be used in floating or full screen mode. Additionally, you can expand, shrink, mark, and lock windows. Furthermore, you have the option to set specific rules for individual applications based on their window's class name.
+                                                                </p>
+								<li><a href="#wm-keys" class="button smooth-scroll-middle">View Keybindings</a></li>
+							</ul>
+						</div>
+						<div class="image">
+							<img src="images/dwm/window.png" alt="" />
+						</div>
+					</section>
+				<!-- Keybindings -->
+					<section class="wrapper style1 align-center">
+						<div class="inner">
+							<h2>Keybindings</h2>
+                                                        <p>Here's a list of some important keybinds you need to know for operating dwm easily. If you want to view, modify or add new keybinds, Edit <code>config.def.h</code> file, and rebuild/reinstall the dwm using <code>sudo make clean install</code></p>
+							<ul class="actions kbd">
+								<li><a class="button"><code>W</code> : Window</a></li>
+								<li><a class="button"><code>C</code> : Control</a></li>
+								<li><a class="button"><code>S</code> : Shift</a></li>
+								<li><a class="button"><code>A</code> : Alt</a></li>
+							</ul>
+							<div class="index align-left">
+								<!-- Table -->
+									<section>
+										<div class="content">
+
+											<h3 id="apps-keys">Applications</h3>
+											<div class="table-wrapper">
+												<table class="alt">
+													<thead>
+														<tr>
+															<th>Keybind</th>
+															<th>Action</th>
+														</tr>
+													</thead>
+													<tbody>
+
+														<tr>
+															<td><code>W + space</code></td>
+															<td>Open dmenu launcher</td>
+														</tr>
+
+														<tr>
+															<td><code>W + c</code></td>
+															<td>Close currently focused client</td>
+														</tr>
+														<tr>
+															<td><code>W + Return</code></td>
+															<td>Open terminal (st)</td>
+														</tr>
+														<tr>
+															<td><code>W + grave(~)</code></td>
+															<td>Toggle scratchpad terminal</td>
+														</tr>
+
+														<tr>
+															<td><code>W + S + h</code></td>
+															<td>Open quickmenu</td>
+														</tr>
+														<tr>
+															<td><code>W + S + x</code></td>
+															<td>Open powermenu</td>
+														</tr>
+														<tr>
+															<td><code>W + S + u</code></td>
+															<td>Open quicklinks</td>
+														</tr>
+													</tbody>
+												</table>
+											</div>
+
+											<h3 id="menu-keys">Menu and Applets</h3>
+											<div class="table-wrapper">
+												<table class="alt">
+													<thead>
+														<tr>
+															<th>Keybind</th>
+															<th>Action</th>
+														</tr>
+													</thead>
+													<tbody>
+														<tr>
+															<td><code>Window</code></td>
+															<td>Open application launcher</td>
+														</tr>
+
+                                                                                                                <tr>
+                                                                                                                        <td><code>W + l</code></td>
+                                                                                                                        <td>Increase master area</td>
+                                                                                                                </tr>
+
+                                                                                                                <tr>
+                                                                                                                        <td><code>W + h</code></td>
+                                                                                                                        <td>Decrease master area</td>
+                                                                                                                </tr>
+
+                                                                                                                <tr>
+                                                                                                                        <td><code>W + k</code></td>
+                                                                                                                        <td>Change focus to the window lower in stack</td>
+                                                                                                                </tr>
+
+                                                                                                                <tr>
+                                                                                                                        <td><code>W + j</code></td>
+                                                                                                                        <td>Change focus to the window higher in stack</td>
+                                                                                                                </tr>
+
+                                                                                                                <tr>
+                                                                                                                        <td><code>W + f</code></td>
+                                                                                                                        <td>Promote currently selected window to the top of the stack</td>
+                                                                                                                </tr>
+
+                                                                                                                <tr>
+                                                                                                                        <td><code>W + d</code></td>
+                                                                                                                        <td>Decrease master count by one</td>
+                                                                                                                </tr>
+
+                                                                                                                <tr>
+                                                                                                                        <td><code>W + s</code></td>
+                                                                                                                        <td>Increase master count by one</td>
+                                                                                                                </tr>
+
+                                                                                                                <tr>
+                                                                                                                        <td><code>W + r</code></td>
+                                                                                                                        <td>Toggle mouse-resize mode</td>
+                                                                                                                </tr>
+
+
+													</tbody>
+												</table>
+											</div>
+
+											<h3 id="wm-keys">Window Management</h3>
+											<div class="table-wrapper">
+												<table class="alt">
+													<thead>
+														<tr>
+															<th>Keybind</th>
+															<th>Action</th>
+														</tr>
+													</thead>
+													<tbody>
+														<tr>
+															<td><code>W + 1..5</code></td>
+															<td>Switch to respective workspace</td>
+														</tr>
+														<tr>
+															<td><code>W + tab</code></td>
+															<td>Switch to previous/next workspace</td>
+														</tr>
+														<tr>
+															<td><code>W + S + 1..5</code></td>
+															<td>Move focused window to respective workspace</td>
+														</tr>
+
+														<tr>
+															<td><code>W + 0</code></td>
+															<td>View all tags</td>
+														</tr>
+
+                                                                                                                <tr>
+                                                                                                                        <td><code>W + S + 0</code></td>
+                                                                                                                        <td>Tag currently focused window to all</td>
+                                                                                                                </tr>
+													</tbody>
+												</table>
+											</div>
+
+											<h3 id="wm-keys">Misc Keys</h3>
+											<div class="table-wrapper">
+												<table class="alt">
+													<thead>
+														<tr>
+															<th>Keybind</th>
+															<th>Action</th>
+														</tr>
+													</thead>
+													<tbody>
+														<tr>
+															<td><code>W + C + S + q</code></td>
+															<td>Refresh dwm</td>
+														</tr>
+														<tr>
+															<td><code>W + S + q</code></td>
+															<td>Kill dwm</td>
+														</tr>
+														<tr>
+															<td><code>W + g</code></td>
+															<td>Hide/Unhide bar</td>
+														</tr>
+													</tbody>
+												</table>
+											</div>
+
+											<h3 id="hw-keys">Hardware Keys</h3>
+											<div class="table-wrapper">
+												<table class="alt">
+													<thead>
+														<tr>
+															<th>Keybind</th>
+															<th>Action</th>
+														</tr>
+													</thead>
+													<tbody>
+														<tr>
+															<td><code>Print</code></td>
+															<td>Take screenshot of desktop.</td>
+														</tr>
+														<tr>
+															<td><code>S + Print</code></td>
+															<td>Take screenshot using selection</td>
+														</tr>
+														<tr>
+															<td><code>XF86AudioRaiseVolume</code></td>
+															<td>Increase Volume</td>
+														</tr>
+														<tr>
+															<td><code>XF86AudioLowerVolume</code></td>
+															<td>Decrease Volume</td>
+														</tr>
+														<tr>
+															<td><code>XF86AudioMute</code></td>
+															<td>Toggle Mute Speakers</td>
+														</tr>
+														<tr>
+															<td><code>XF86AudioMicMute</code></td>
+															<td>Toggle Mute Microphone</td>
+														</tr>
+														<tr>
+															<td><code>XF86MonBrightnessUp</code></td>
+															<td>Increase Screen Brightness</td>
+														</tr>
+														<tr>
+															<td><code>XF86MonBrightnessDown</code></td>
+															<td>Decrease Screen Brightness</td>
+														</tr>
+													</tbody>
+												</table>
+											</div>
+
+										</div>
+									</section>
+							</div>
+						</div>
+					</section>
+				<!-- Gallery -->
+					<section class="wrapper style1 align-center">
+						<div class="inner">
+							<h2>Styles / Themes</h2>
+                                                        <p>DWM also has pywal support, which automatically applies a colorscheme based on your wallpaper whenever you change it. To set a random wallpaper, use the command <code>setbg &lt;directoryname&gt;</code>. To change the wallpaper and apply a colorscheme, use the command <code>setbg &lt;imagefile&gt;</code>. If you want to open images in nsxiv, you can use the key combination <code>Ctrl + x + w</code> to change the wallpaper.</p>
+						</div>
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+	</body>
+</html>

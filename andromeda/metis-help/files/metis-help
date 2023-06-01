@@ -1,0 +1,54 @@
+#!/usr/bin/env bash
+
+## Copyright (C) PwnWriter // METIS Linux (metislinux.org)
+##
+
+## Data
+_dir='/usr/share/metis/help'
+#_dir="/home/pwn/playground/metislinux/metis-pkgs/andromeda/metis-help/files/help"
+_dialog_cmd="--html --disable-search --browser --print-uri --uri-handler='firefox --new-tab %s'"
+_uri1="file://${_dir}/hello.html"
+_uri2="file://${_dir}/about.html"
+_uri3="file://${_dir}/utilities.html"  # Added utilities.html
+_uri4="file://${_dir}/dwm.html"
+_uri5="file://${_dir}/tips.html"
+_uri6="file://${_dir}/community.html"
+
+## Generate a random key for the --key option
+_key=$(shuf -i 1000-9999 -n 1)
+
+## Welcome Dialog
+yad --plug="${_key}" --tabnum=1 ${_dialog_cmd} \
+	--uri="${_uri1}" &> /tmp/res1 &
+
+## About Dialog
+yad --plug="${_key}" --tabnum=2 ${_dialog_cmd} \
+	--uri="${_uri2}" &> /tmp/res2 &
+
+## Utilities Dialog  # Added utilities dialog
+yad --plug="${_key}" --tabnum=3 ${_dialog_cmd} \
+	--uri="${_uri3}" &> /tmp/res3 &
+
+## DWM Dialog
+yad --plug="${_key}" --tabnum=4 ${_dialog_cmd} \
+	--uri="${_uri4}" &> /tmp/res4 &
+
+## Tips Dialog
+yad --plug="${_key}" --tabnum=5 ${_dialog_cmd} \
+	--uri="${_uri5}" &> /tmp/res5 &
+
+## Communities Dialog
+yad --plug="${_key}" --tabnum=6 ${_dialog_cmd} \
+	--uri="${_uri6}" &> /tmp/res6 &
+
+## Launch Main Window
+yad --width='1150' --height='695' --borders=0 --center \
+	--title='Help and Tips' \
+	--window-icon=metislinux.png \
+	--no-buttons --no-escape \
+	--notebook --key="${_key}" \
+	--tab="Hello" --tab="About" --tab="Utilities" --tab="DWM" --tab="Tips" --tab="Communities" \
+	--tab-pos=top --tab-borders=0 --active-tab=1 \
+	--button="Exit:0" --button="Close:1" --button="Next:2" --button="Back:3" \
+	--expand --stack
+

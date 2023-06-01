@@ -1,25 +1,40 @@
 #!/usr/bin/env bash
 
+# Copyright PwnWriter // METIS Linux (metislinux.org)
+
 ## Welcome / Autostart app for METIS  
 
-DIR='/usr/share/metis/src'
-stdbuf -oL -eL yad  --width='900' --height='570' --borders=0 --center \
-					--title='Welcome' \
-					--window-icon=metis-logo \
-					--no-buttons --no-escape \
-                                        --html --uri="$DIR/index.html" \
-                                        --print-uri 2>&1 \
+DIR='/usr/share/metis/src/'
+ICON='/usr/share/metis/src/metis-logo.png'
+
+stdbuf -oL -eL yad --width='900' --height='570' --borders=0 --center \
+	--title='Welcome' \
+	--window-icon="$ICON" \
+	--no-buttons --no-escape \
+	--html --uri="$DIR/index.html" \
+	--print-uri 2>&1 \
 | while read -r line; do
 	case ${line##*/} in
 		run1)
-            dunstify -u low "Launching Calamares..." && calamares &
-            sleep 1
-            pkill -9 yad
-            ;;
-        run2)
-            dunstify -u low "Enjoy metis live mode ..." && pkill -9 yad
-            ;;
-		*)		   echo "No URI" ;;
+			dunstify -u low " " "Launching installer..." && calamares &
+			sleep 1
+			pkill -9 yad
+			;;
+		run2)
+			dunstify -u low "  " "Enjoy metis live mode ..." && pkill -9 yad
+			;;
+		keybindings)
+			dunstify -u low " " "Launching METIS Help app..." && pkill -9 yad && metis-help &
+			sleep 1
+			;;
+		website)
+			dunstify -u low " " "Opening METIS Linux website..." && firefox https://metislinux.org &
+			sleep 1
+			pkill -9 yad
+			;;
+		*)	
+			echo "No URI"
+			;;
 	esac
 done
 

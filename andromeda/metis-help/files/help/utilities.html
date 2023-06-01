@@ -1,0 +1,294 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>METIS utilities</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+		<!-- Wrapper -->
+		<div id="wrapper" class="divided">
+			<!-- Tips -->
+			<section class="wrapper style1 align-center">
+				<div class="inner">
+					<h2>METIS utilities keybindings</h2>
+					<p>Some of the useful default bindings that Metis Linux has made for you.</p>
+
+					<h2 align="center">Neovim bindings</h2>
+					<ul class="actions kbd">
+						<li><a class="button"><code>n</code> : Normal</a></li>
+						<li><a class="button"><code>t</code> : Terminal</a></li>
+						<li><a class="button"><code>i</code> : Insert</a></li>
+					</ul>
+
+					<!-- Table -->
+					<section>
+						<div class="content">
+							<div class="table-wrapper">
+								<table class="alt"> 
+                                                                        <br> </br>
+									<thead>
+										<tr>    <th>  &#160; &#160; Keybind &#160; &#160; </th> 
+											<th> &#160; &#160;  &#160; &#160;Action</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td><code>i + Ctrl-h</code></td>
+											<td>Move left in insert mode</td>
+										</tr>
+										<tr>
+											<td><code>i + Ctrl-j</code></td>
+											<td>Move down in insert mode</td>
+										</tr>
+										<tr>
+											<td><code>i + Ctrl-k</code></td>
+											<td>Move up in insert mode</td>
+										</tr>
+										<tr>
+											<td><code>i + Ctrl-l</code></td>
+											<td>Move right in insert mode</td>
+										</tr>
+										<tr>
+											<td><code>n + Ctrl-s</code></td>
+											<td>Save the file</td>
+										</tr>
+										<tr>
+											<td><code>n + Ctrl-q</code></td>
+											<td>Close the current buffer</td>
+										</tr>
+										<tr>
+											<td><code>n + TAB</code></td>
+											<td>Switch to the next buffer in the bufferline</td>
+										</tr>
+										<tr>
+											<td><code>n + Shift-TAB</code></td>
+											<td>Switch to the previous buffer in the bufferline</td>
+										</tr>
+										<tr>
+											<td><code>n + leader + a</code></td>
+											<td>Toggle NvimTree</td>
+										</tr>
+										<tr>
+											<td><code>i + jj</code></td>
+											<td>Exit insert mode</td>
+										</tr>
+										<tr>
+											<td><code>n + J</code></td>
+											<td>Move down and center the screen</td>
+										</tr>
+										<tr>
+											<td><code>n + K</code></td>
+											<td>Move up and center the screen</td>
+										</tr>
+										<tr>
+											<td><code>n + leader + v</code></td>
+											<td>Vertical split</td>
+										</tr>
+										<tr>
+											<td><code>n + leader + h</code></td>
+											<td>Horizontal split</td>
+										</tr>
+										<tr>
+											<td><code>n + Ctrl-h</code></td>
+											<td>Move to the left split</td>
+										</tr>
+										<tr>
+											<td><code>n + Ctrl-j</code></td>
+											<td>Move to the bottom split</td>
+										</tr>
+										<tr>
+											<td><code>n + Ctrl-k</code></td>
+											<td>Move to the top split</td>
+										</tr>
+										<tr>
+											<td><code>n + Ctrl-l</code></td>
+											<td>Move to the right split</td>
+										</tr>
+										<tr>
+											<td><code>n + leader + x</code></td>
+											<td>Close the current split</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+
+                                                        <h2 align="center">TMUX bindings</h2>
+                                                        <ul class="actions kbd">
+                                                                <li><a class="button"><code>C-a</code> : prefix</a></li>
+                                                        </ul>
+
+                                                        <!-- Table -->
+                                                        <section>
+                                                                <div class="content">
+                                                                        <div class="table-wrapper">
+                                                                                <table class="alt">
+                                                                                        <br> </br>
+                                                                                        <thead>
+                                                                                                <tr>
+                                                                                                        <th>Keybind</th>
+                                                                                                        <th>Action</th>
+                                                                                                </tr>
+                                                                                        </thead>
+                                                                                        <tbody>
+                                                                                                <tr>
+                                                                                                        <td><code>prefix + -</code></td>
+                                                                                                        <td>Horizontal split</td>
+                                                                                                </tr>
+                                                                                                <tr>
+                                                                                                        <td><code>prefix + |</code></td>
+                                                                                                        <td>Split window horizontally</td>
+                                                                                                </tr>
+                                                                                                <tr>
+                                                                                                        <td><code>prefix + &lt;</code></td>
+                                                                                                        <td>Export default clipboard</td>
+                                                                                                </tr>
+                                                                                                <tr>
+                                                                                                        <td><code>prefix + h (left key)</code></td>
+                                                                                                        <td>Select pane to the left</td>
+                                                                                                </tr>
+                                                                                                <tr>
+                                                                                                        <td><code>prefix + j (down key)</code></td>
+                                                                                                        <td>Select pane below</td>
+                                                                                                </tr>
+                                                                                                <tr>
+                                                                                                        <td><code>prefix + k (up key)</code></td>
+                                                                                                        <td>Select pane above</td>
+                                                                                                </tr>
+                                                                                                <tr>
+                                                                                                        <td><code>prefix + l (right key)</code></td>
+                                                                                                        <td>Select pane to the right</td>
+                                                                                                </tr>
+                                                                                        </tbody>
+                                                                                </table>
+                                                                        </div>
+                                                                </div>
+                                                        </section>
+
+							<h2 align="center">Terminal bindings</h2>
+                                                <p> METIS uses  suckless's terminal which is very minimal and yet powerful. To enhance the overall workflow the followings are
+                                                default bindings that we wrote for you.</p>
+
+
+                                                        <!-- Table -->
+                                                        <section>
+                                                                <div class="content">
+                                                                        <div class="table-wrapper">
+                                                                                <table class="alt">
+                                                                                        <br> </br>
+                                                                                        <thead>
+                                                                                                <tr>
+                                                                                                        <th>Keybind</th>
+                                                                                                        <th>Action</th>
+                                                                                                </tr>
+                                                                                        </thead>
+                                                                                        <tbody>
+                                                                                                <tr>
+                                                                                                        <td><code>A + c</code></td>
+                                                                                                        <td>Copy selection</td>
+                                                                                                </tr>
+                                                                                                <tr>
+                                                                                                        <td><code>A + v</code></td>
+                                                                                                        <td>Paste clipboard</td>
+                                                                                                </tr>
+                                                                                                <tr>
+                                                                                                        <td><code>A + l</code></td>
+                                                                                                        <td>Shows all urls of terminal in dmenu</td>
+                                                                                                </tr>
+                                                                                                <tr>
+                                                                                                        <td><code>A + o</code></td>
+                                                                                                        <td>Copy the output of command using dmenu</td>
+                                                                                                </tr>
+                                                                                        </tbody>
+                                                                                </table>
+                                                                        </div>
+                                                                </div>
+                                                        </section>
+
+							<h2 align="center">zsh shell bindings</h2>
+                                                        <p>The zsh shell of metislinux has vim bindings, which means you can get all those bindings of vim directly in 
+                                                        your shell to navigate faster..</p>
+                                                        <!-- Table -->
+                                                        <section>
+                                                                <div class="content">
+                                                                        <div class="table-wrapper">
+                                                                                <table class="alt">
+                                                                                        <br> </br>
+                                                                                        <thead>
+                                                                                                <tr>
+                                                                                                        <th>Keybind</th>
+                                                                                                        <th>Action</th>
+                                                                                                </tr>
+                                                                                        </thead>
+                                                                                        <tbody>
+                                                                                                <tr>
+                                                                                                        <td><code>ESC</code></td>
+                                                                                                        <td>Toggle insert mode</td>
+                                                                                                </tr>
+                                                                                                <tr>
+                                                                                                        <td><code>C + 0</code></td>
+                                                                                                        <td>Go to start of a command</td>
+                                                                                                </tr>
+                                                                                                <tr>
+                                                                                                        <td><code>w</code></td>
+                                                                                                        <td>Go ahead to a word</td>
+                                                                                                </tr>
+                                                                                                <tr>
+                                                                                                        <td><code>b</code></td>
+                                                                                                        <td>Go back of a word</td>
+                                                                                                </tr>
+
+                                                                                                <tr>
+                                                                                                        <td><code>S + a</code></td>
+                                                                                                        <td>Go to end of the line</td>
+                                                                                                </tr>
+
+                                                                                                <tr>
+                                                                                                        <td><code>l</code></td>
+                                                                                                        <td>go ahead one letter</td>
+                                                                                                </tr>
+
+                                                                                                <tr>
+                                                                                                        <td><code>h</code></td>
+                                                                                                        <td>go back one letter</td>
+                                                                                                </tr>
+
+                                                                                                <tr>
+                                                                                                        <td><code>k</code></td>
+                                                                                                        <td>cycle history up</td>
+                                                                                                </tr>
+
+                                                                                                <tr>
+                                                                                                        <td><code>j</code></td>
+                                                                                                        <td>cycle history down</td>
+                                                                                                </tr>
+
+    
+                                                                                                <tr>
+                                                                                                        <td><code>C + f</code></td>
+                                                                                                        <td>Open file tree with fzf and bat</td>
+                                                                                                </tr>
+                                                                                        </tbody>
+                                                                                </table>
+                                                                        </div>
+                                                                        <p>These are the pretty common bindings, 3w, 5b or any would even work :) </p>
+                                                                </div>
+                                                        </section>
+
+						</div>
+					</section>
+				</div>
+			</section>
+
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+		</div>
+	</body>
+</html>
+
