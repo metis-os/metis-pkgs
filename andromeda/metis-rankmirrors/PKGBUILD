@@ -1,9 +1,9 @@
 # Maintainer: pwnwriter <hey@pwnwriter.xyz>
 
-pkgname=metis-live-scripts
+pkgname=metis-rankmirrors
 pkgver=1.0
-pkgrel=1
-pkgdesc="Live os Scripts for metis"
+pkgrel=0
+pkgdesc="Rank mirrors in metis"
 url="https://github.com/metis-os/metis-pkgs"
 arch=('any')
 license=('MIT')
@@ -20,10 +20,10 @@ prepare() {
 package() {
     cd "$srcdir"
 
-    # Array of script names
-    scripts=("remove_pkgs" "metis-chroot")
+            scripts=(
+                            "rankmirrors"
+                    )
 
-    # Install scripts using loop
     for script in "${scripts[@]}"; do
         install -Dm755 "$script" "$pkgdir/usr/local/bin/$script"
     done

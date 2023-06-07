@@ -3,8 +3,8 @@
 # Copyright PwnWriter || METIS Linux ( metislinux.org )
 
 remove_calamares() {
-    pacman --noconfirm -Rcns calamares metis-welcome metis-live-scripts && rm -rf /etc/calamares
-    userdel -r artix || exit 0
+    pacman --noconfirm -Rns calamares metis-welcome metis-live-scripts && rm -rf /etc/calamares
+    userdel -r artix || exit 1
 }
 
 check_network() {
@@ -15,12 +15,41 @@ check_network() {
     fi
 }
 
-remove_calamares && check_network
+
+add_doas_conf_lines() {
+    local conf_file="/etc/doas.conf"
+    local lines=(
+        "permit persist :wheel"
+        "permit nopass :audio as root cmd reboot"
+        "permit nopass :audio as root cmd poweroff"
+        "permit nopass :audio as root cmd zzz"
+    )
+
+    printf "%s\n" "${lines[@]}" | tee "$conf_file" >/dev/null
+}
+
+replace_getty_args() {
+    local conf_file="/etc/runit/runsvdir/default/agetty-tty1/conf"
+    local old_line='GETTY_ARGS="--autologin root --noclear"'
+    local new_line='GETTY_ARGS="--autologin  --noclear"'
+
+    if [ -w "$conf_file" ]; then
+        sed -i "s|$old_line|$new_line|" "$conf_file" || exit 1
+    else
+        exit 1
+    fi
+}
+
+
+
+# execute
+replace_getty_args
+add_doas_conf_lines
+check_network && remove_calamares 
 
 if [[ $? -eq 0 ]]; then
     pacman-key --init && pacman-key --populate
 else
-    exit 0
+    exit 1
 fi
-
 

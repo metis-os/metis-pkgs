@@ -1,8 +1,8 @@
 #!/bin/bash
 
-## Copyright (C) Pwnwriter // METIS Linux 
+# Copyright (C) Pwnwriter // METIS Linux ( metislinux.org )
 
-## Directories
+# vars
 current_directory="$(pwd)"
 directory_name="$(basename "$current_directory")"
 last_character="$(basename "$(pwd)")"
@@ -23,7 +23,8 @@ exit_on_signal_SIGTERM () {
 trap exit_on_signal_SIGINT SIGINT
 trap exit_on_signal_SIGTERM SIGTERM
 
-## Build packages
+
+
 build_packages () {
     local package
 
@@ -35,28 +36,19 @@ build_packages () {
     for package in "${package_directories[@]}"; do
         echo -e "Building ${package}..."
         cd ${package}
-        makepkg -sc
+        makepkg -scf
         mv *.pkg.tar.zst "$packages_directory"    
 
-        # Verify
-        while true; do
-            set -- "$packages_directory"/${package}-*
-            if [[ -e "$1" ]]; then
-                echo -e "\nPackage '${package}' generated successfully.\n"
-                break
-            else
-                echo -e "\nFailed to build '${package}', Exiting...\n"
-                exit 1;
-            fi
-        done
+        set -- "$packages_directory"/${package}-*
+        if [[ -e "$1" ]]; then
+            echo -e "\nPackage '${package}' generated successfully.\n"
+        else
+            echo -e "\nFailed to build '${package}', Exiting...\n"
+            exit 1;
+        fi
+
         cd "$current_directory"
     done
-
-    repository_directory='../pkgs/x86_64'
-    if [[ -d "$repository_directory" ]]; then
-        mv -f "$packages_directory"/*.pkg.tar.zst "$repository_directory" && rm -r "$packages_directory"
-        echo -e "Packages moved to Repository.\n[!] Don't forget to update the database.\n"
-    fi
 }
 
 build_packages

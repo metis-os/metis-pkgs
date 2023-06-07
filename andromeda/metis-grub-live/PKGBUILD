@@ -1,0 +1,23 @@
+# Maintainer: PwnWriter <hey@PwnWriter.xyz>
+
+pkgname=metis-grub-live
+pkgver=1.0
+pkgrel=0
+pkgdesc="Live grub theme for metislinux"
+url="https://github.com/metis-os/metis-pkgs"
+arch=('any')
+license=('MIT')
+makedepends=()
+depends=('grub')
+conflicts=()
+provides=("${pkgname}")
+options=(!strip !emptydirs)
+
+prepare() {
+	cp -af ../files/. ${srcdir}
+}
+
+package() {
+        cd ${srcdir}
+        make PREFIX=/usr DESTDIR="$pkgdir" install
+}

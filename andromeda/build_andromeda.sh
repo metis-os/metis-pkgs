@@ -1,8 +1,8 @@
 #!/bin/bash
 
-## Copyright (C) Pwnwriter // METIS Linux 
+# Copyright (C) Pwnwriter // METIS Linux ( metislinux.org )
 
-## Directories
+# vars
 current_directory="$(pwd)"
 directory_name="$(basename "$current_directory")"
 last_character="$(basename "$(pwd)")"
@@ -23,7 +23,8 @@ exit_on_signal_SIGTERM () {
 trap exit_on_signal_SIGINT SIGINT
 trap exit_on_signal_SIGTERM SIGTERM
 
-## Build packages
+
+
 build_packages () {
     local package
 
@@ -38,20 +39,16 @@ build_packages () {
         makepkg -scf
         mv *.pkg.tar.zst "$packages_directory"    
 
-        # Verify
-        while true; do
-            set -- "$packages_directory"/${package}-*
-            if [[ -e "$1" ]]; then
-                echo -e "\nPackage '${package}' generated successfully.\n"
-                break
-            else
-                echo -e "\nFailed to build '${package}', Exiting...\n"
-                exit 1;
-            fi
-        done
+        set -- "$packages_directory"/${package}-*
+        if [[ -e "$1" ]]; then
+            echo -e "\nPackage '${package}' generated successfully.\n"
+        else
+            echo -e "\nFailed to build '${package}', Exiting...\n"
+            exit 1;
+        fi
+
         cd "$current_directory"
     done
-
 }
 
 build_packages
