@@ -7,13 +7,7 @@ remove_calamares() {
     userdel -r artix || exit 1
 }
 
-check_network() {
-    if ping -q -c 1 -W 1 google.com >/dev/null; then
-        return 0 # Network is available
-    else
-        return 1 # Network is not available
-    fi
-}
+
 
 
 add_doas_conf_lines() {
@@ -31,7 +25,7 @@ add_doas_conf_lines() {
 replace_getty_args() {
     local conf_file="/etc/runit/runsvdir/default/agetty-tty1/conf"
     local old_line='GETTY_ARGS="--autologin root --noclear"'
-    local new_line='GETTY_ARGS="--autologin  --noclear"'
+    local new_line='GETTY_ARGS="--noclear"'
 
     if [ -w "$conf_file" ]; then
         sed -i "s|$old_line|$new_line|" "$conf_file" || exit 1
@@ -45,11 +39,7 @@ replace_getty_args() {
 # execute
 replace_getty_args
 add_doas_conf_lines
-check_network && remove_calamares 
+remove_calamares 
 
-if [[ $? -eq 0 ]]; then
-    pacman-key --init && pacman-key --populate
-else
-    exit 1
-fi
+
 
